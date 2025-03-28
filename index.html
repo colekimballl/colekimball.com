@@ -1,0 +1,500 @@
+i<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cole Kimball | Software Engineer</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional hero-cta button margin */
+        .hero-cta {
+            margin-right: 15px;
+        }
+        
+        /* Improved mobile styles */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+
+            .navbar.scrolled {
+                padding: 10px 20px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                right: -100%;
+                width: 100%;
+                background-color: var(--dark-gray);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                transition: right 0.3s ease;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .main-content {
+                padding: 0 20px;
+            }
+
+            .section-title::after {
+                width: 100px;
+            }
+
+            .hero-title {
+                font-size: 40px;
+                margin-top: 40px;
+            }
+
+            .hero-subtitle {
+                font-size: 30px;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-photo {
+                margin-top: 30px;
+            }
+
+            .about-photo-wrapper {
+                width: 200px;
+                height: 200px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .project-card {
+                height: 350px;
+            }
+            
+            /* Better spacing for mobile */
+            section {
+                padding: 60px 0;
+                min-height: auto;
+            }
+            
+            .skill-bars {
+                margin-bottom: 30px;
+            }
+            
+            .contact {
+                padding-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Particle Background -->
+    <div id="particles-js"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <a href="#" class="logo">CK</a>
+        <div class="nav-links">
+            <a href="#about" class="nav-link">About</a>
+            <a href="#experience" class="nav-link">Experience</a>
+            <a href="#education" class="nav-link">Education</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="hero-intro">Hi, my name is</p>
+                <h1 class="hero-title">Cole Kimball.</h1>
+                <h2 class="hero-subtitle">Create. Build. Conquer.</h2>
+                <p class="hero-description">
+                    I am a software developer, music producer, athlete, second degree blackbelt, eagle scout, and much more.
+                </p>
+                <a href="#contact" class="hero-cta">Get In Touch</a>
+                <a href="#" class="hero-cta" download>Download Resume</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <h2 class="section-title"><span class="section-number">01.</span> About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I'm a software engineer specializing in developing high-performance solutions for complex problems. With a background in computer science and a passion for technology, I continuously explore new frameworks and methodologies to enhance my skills.
+                    </p>
+                    <p>
+                        Currently pursuing my BS in Computer Science at Western Governors University, I balance my academic knowledge with practical experience in software development, DevOps, and automation.
+                    </p>
+                    <p>
+                        Here are some technologies I've been working with recently:
+                    </p>
+                    <ul class="skills-list">
+                        <li>C/C++</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>TypeScript</li>
+                        <li>Linux</li>
+                        <li>Django</li>
+                        <li>TensorFlow</li>
+                        <li>Jenkins</li>
+                        <li>AWS</li>
+                        <li>Git/SVN</li>
+                    </ul>
+
+                    <div class="skill-bars">
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">C/C++</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">Linux</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript/TypeScript</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-info">
+                                <span class="skill-name">DevOps/CI/CD</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-progress">
+                                <div class="skill-progress-bar" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terminal Animation -->
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-button terminal-button-red"></div>
+                            <div class="terminal-button terminal-button-yellow"></div>
+                            <div class="terminal-button terminal-button-green"></div>
+                        </div>
+                        <div class="terminal-content">
+                            <span class="terminal-prompt">$ </span>
+                            <span id="terminal-text"></span>
+                            <span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-photo">
+                    <div class="about-photo-wrapper">
+                        <img src="img/profile-photo.jpg" alt="Cole Kimball" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <h2 class="section-title"><span class="section-number">02.</span> Where I've Worked</h2>
+            <div class="experience-content">
+                <div class="job">
+                    <h3 class="job-title">Software Engineer / DevOps Specialist <span class="job-company">@ Western Semiconductor</span></h3>
+                    <p class="job-period">March 2024 - September 2024</p>
+                    <ul class="job-details">
+                        <li>Developed automation scripts in Python and Bash for Process Design Kit (PDK) workflows, reducing overhead by 50%</li>
+                        <li>Created custom parameterized cell (PCell) implementations in C++ for the GF90 environment</li>
+                        <li>Built and maintained Jenkins CI pipelines for RISC-V core (CVA6) and system component integration</li>
+                        <li>Administered Linux virtual machines (CentOS, Rocky), implementing security policies and system configurations</li>
+                        <li>Designed and executed PDK migration scripts to ensure seamless transition between technology nodes</li>
+                    </ul>
+                </div>
+                <div class="job">
+                    <h3 class="job-title">E-commerce & Graphic Design Specialist <span class="job-company">@ Moxie Vinyls</span></h3>
+                    <p class="job-period">July 2020 - May 2022</p>
+                    <ul class="job-details">
+                        <li>Created artwork and pattern designs for vinyl products using Adobe Creative Suite</li>
+                        <li>Managed Shopify e-commerce platform including product listings, SEO, and promotional campaigns</li>
+                        <li>Developed automation workflows to improve design throughput and production efficiency</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="education">
+            <h2 class="section-title"><span class="section-number">03.</span> Education</h2>
+            <div class="education-item">
+                <h3 class="education-school">Western Governors University</h3>
+                <p class="education-degree">BS in Computer Science</p>
+                <p class="education-period">Expected October 2025</p>
+                <span class="education-gpa">In Progress</span>
+                
+                <h4 class="course-title">Key Coursework:</h4>
+                <ul class="courses-list">
+                    <li>Data Structures & Algorithms</li>
+                    <li>Operating Systems</li>
+                    <li>Computer Architecture</li>
+                </ul>
+                
+                <h4 class="course-title">Certifications & Studies:</h4>
+                <ul class="courses-list">
+                    <li>Google Cybersecurity Certificate</li>
+                    <li>OpenCV/Computer Vision</li>
+                </ul>
+                
+                <h4 class="course-title">Achievements:</h4>
+                <ul class="courses-list">
+                    <li>Eagle Scout</li>
+                    <li>Second Degree Black Belt</li>
+                    <li>Kappa Sigma Fraternity Member</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <h2 class="section-title"><span class="section-number">04.</span> Some Things I've Built</h2>
+            <div class="projects-grid">
+                <!-- VCD Parser Project -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-top">
+                                <div class="folder-icon">
+                                    <i class="fas fa-folder-open"></i>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/colekimballl" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">VCD Parser for Circuit Simulation</h3>
+                            <p class="project-description">
+                                A Qt/C++ parser for Value Change Dump (VCD) files used in circuit simulations with data validation and extraction algorithms.
+                            </p>
+                            <div class="project-tech">
+                                <span class="project-tech-item">C++</span>
+                                <span class="project-tech-item">Qt</span>
+                                <span class="project-tech-item">HDF5</span>
+                                <span class="project-tech-item">Circuit Simulation</span>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3 class="project-back-title">VCD Parser for Circuit Simulation</h3>
+                            <p class="project-back-description">
+                                Developed a Qt/C++ parser for Value Change Dump (VCD) files used in circuit simulations. Implemented data validation and extraction algorithms for processing waveform data. Integrated with HDF5 for efficient storage and retrieval of simulation data.
+                            </p>
+                            <a href="https://github.com/colekimballl" class="project-back-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PDK Automation Framework Project -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-top">
+                                <div class="folder-icon">
+                                    <i class="fas fa-folder-open"></i>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/colekimballl" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">PDK Automation Framework</h3>
+                            <p class="project-description">
+                                A Python framework for automating Process Design Kit (PDK) workflows with tools for layer mapping and configuration management.
+                            </p>
+                            <div class="project-tech">
+                                <span class="project-tech-item">Python</span>
+                                <span class="project-tech-item">Bash</span>
+                                <span class="project-tech-item">SVN</span>
+                                <span class="project-tech-item">Automation</span>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3 class="project-back-title">PDK Automation Framework</h3>
+                            <p class="project-back-description">
+                                Built a Python framework for automating Process Design Kit (PDK) workflows. Created tools for layer mapping, LNPN auto-correction, and configuration management. Developed scripts for SVN repository structure migration and management.
+                            </p>
+                            <a href="https://github.com/colekimballl" class="project-back-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Algorithmic Trading Platform Project -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-top">
+                                <div class="folder-icon">
+                                    <i class="fas fa-folder-open"></i>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/colekimballl" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="#" class="project-link">
+                                        <i class="fas fa-external-link-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">Algorithmic Trading Platform</h3>
+                            <p class="project-description">
+                                A trading platform supporting multiple exchanges with integrated risk management and ML models for market prediction.
+                            </p>
+                            <div class="project-tech">
+                                <span class="project-tech-item">Python</span>
+                                <span class="project-tech-item">TensorFlow</span>
+                                <span class="project-tech-item">API</span>
+                                <span class="project-tech-item">Data Visualization</span>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3 class="project-back-title">Algorithmic Trading Platform</h3>
+                            <p class="project-back-description">
+                                Designed a trading platform supporting multiple exchanges with integrated risk management. Implemented ML models for market prediction and strategy optimization. Built backtesting tools with visualization capabilities and developed modular API clients.
+                            </p>
+                            <a href="https://github.com/colekimballl" class="project-back-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Music Production Tools Project -->
+                <div class="project-card">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <div class="project-top">
+                                <div class="folder-icon">
+                                    <i class="fas fa-folder-open"></i>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/colekimballl" class="project-link" target="_blank">
+                                        <i class="fab fa-github"></i>
+                                    </a>
+                                    <a href="https://www.youtube.com/@solaris-develops" class="project-link" target="_blank">
+                                        <i class="fab fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3 class="project-title">Music Production Tools</h3>
+                            <p class="project-description">
+                                Custom audio processing and sound design tools with automated workflows for music creation.
+                            </p>
+                            <div class="project-tech">
+                                <span class="project-tech-item">Python</span>
+                                <span class="project-tech-item">DSP</span>
+                                <span class="project-tech-item">Audio</span>
+                                <span class="project-tech-item">MIDI</span>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3 class="project-back-title">Music Production Tools</h3>
+                            <p class="project-back-description">
+                                Developed custom tools for audio processing, sample management, and sound design. Created automation scripts for streamlining music production workflows and implemented MIDI processing tools for composition.
+                            </p>
+                            <a href="https://www.youtube.com/@solaris-develops" class="project-back-link" target="_blank">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="section-title"><span class="section-number">05.</span> Contact</h2>
+            <p class="contact-title">Get In Touch</p>
+            <h2 class="contact-heading">Let's Build Something Together</h2>
+            <p class="contact-text">
+                I'm currently looking for new opportunities. Whether you have a question or just want to say hi, my inbox is always open. I'll get back to you as soon as possible!
+            </p>
+            
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" id="email" class="form-input" required>
+                </div>
+                <div class="form-group">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea id="message" class="form-textarea" required></textarea>
+                </div>
+                <button type="submit" class="form-button">Send Message</button>
+            </form>
+            
+            <div class="social-links">
+                <a href="https://github.com/colekimballl" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/cole-kimball-a05868296/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://www.youtube.com/@solaris-develops" class="social-link" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="mailto:colekimball0@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Designed & Built by Cole Kimball © 2024</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
