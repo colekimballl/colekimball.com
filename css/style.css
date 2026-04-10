@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/oswald-400.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/oswald-500.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url('../fonts/oswald-600.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'Oswald';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('../fonts/oswald-700.woff2') format('woff2');
+}
+
+:root {
+    --bg: #000000;
+    --white: #ffffff;
+    --stroke: #000000;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+html, body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Oswald', 'Impact', 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+}
+
+canvas#bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    display: block;
+    pointer-events: none;
+}
+
+.vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(
+        ellipse at center,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.38) 48%,
+        rgba(0, 0, 0, 0.8)  86%,
+        rgba(0, 0, 0, 0.95) 100%
+    );
+}
+
+main {
+    position: relative;
+    z-index: 2;
+}
+
+section.section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.3s ease, transform 1.3s ease;
+}
+
+section.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ---------- Hero ---------- */
+.hero h1 {
+    font-size: clamp(62px, 13vw, 180px);
+    font-weight: 700;
+    letter-spacing: 0.035em;
+    line-height: 0.95;
+    margin-bottom: 28px;
+    color: var(--white);
+    -webkit-text-stroke: 3px var(--stroke);
+    paint-order: stroke fill;
+    text-shadow:
+        0 2px 44px rgba(0, 0, 0, 0.98),
+        0 0 80px rgba(0, 0, 0, 0.85);
+}
+
+.hero .tagline {
+    font-size: clamp(13px, 1.75vw, 17px);
+    font-weight: 500;
+    color: var(--white);
+    letter-spacing: 0.5em;
+    -webkit-text-stroke: 1px var(--stroke);
+    paint-order: stroke fill;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.95);
+    opacity: 0.9;
+}
+
+.scroll-hint {
+    position: absolute;
+    bottom: 44px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.48em;
+    opacity: 0.55;
+    animation: fadePulse 3.4s ease-in-out infinite;
+    -webkit-text-stroke: 0.8px var(--stroke);
+    paint-order: stroke fill;
+}
+.scroll-hint .line {
+    width: 1px;
+    height: 56px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0));
+}
+@keyframes fadePulse {
+    0%, 100% { opacity: 0.34; }
+    50%      { opacity: 0.82; }
+}
+
+/* ---------- Quote sections ---------- */
+.quote blockquote {
+    font-size: clamp(26px, 4.1vw, 58px);
+    font-weight: 600;
+    line-height: 1.12;
+    letter-spacing: 0.02em;
+    max-width: 18ch;
+    color: var(--white);
+    -webkit-text-stroke: 2.2px var(--stroke);
+    paint-order: stroke fill;
+    text-shadow:
+        0 2px 44px rgba(0, 0, 0, 0.98),
+        0 0 72px rgba(0, 0, 0, 0.88);
+    margin-bottom: 52px;
+}
+
+.quote cite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    font-style: normal;
+    color: var(--white);
+}
+
+.quote cite::before {
+    content: '';
+    width: 52px;
+    height: 2px;
+    background: var(--white);
+    opacity: 0.85;
+}
+
+.quote cite .name {
+    font-size: clamp(15px, 1.85vw, 22px);
+    font-weight: 700;
+    letter-spacing: 0.34em;
+    color: var(--white);
+    -webkit-text-stroke: 1.2px var(--stroke);
+    paint-order: stroke fill;
+    text-shadow: 0 1px 14px rgba(0, 0, 0, 0.95);
+}
+
+.quote cite .year {
+    font-size: clamp(11px, 1.2vw, 14px);
+    font-weight: 500;
+    letter-spacing: 0.38em;
+    color: var(--white);
+    opacity: 1;
+    -webkit-text-stroke: 0.8px var(--stroke);
+    paint-order: stroke fill;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.92);
+}
+
+/* ---------- Manifesto ---------- */
+.manifesto .lead {
+    font-size: clamp(14px, 1.85vw, 18px);
+    font-weight: 600;
+    letter-spacing: 0.46em;
+    color: var(--white);
+    margin-bottom: 36px;
+    opacity: 0.85;
+    -webkit-text-stroke: 1px var(--stroke);
+    paint-order: stroke fill;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.92);
+}
+
+.manifesto .body {
+    font-size: clamp(32px, 5.2vw, 72px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: 0.025em;
+    max-width: 16ch;
+    color: var(--white);
+    -webkit-text-stroke: 2.4px var(--stroke);
+    paint-order: stroke fill;
+    text-shadow:
+        0 2px 44px rgba(0, 0, 0, 0.98),
+        0 0 72px rgba(0, 0, 0, 0.88);
+}
+
+/* ---------- CTA ---------- */
+.cta-link {
+    display: inline-block;
+    padding: 22px 66px;
+    border: 2px solid var(--white);
+    color: var(--white);
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 0.38em;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    -webkit-text-stroke: 1.2px var(--stroke);
+    paint-order: stroke fill;
+    box-shadow:
+        0 0 50px rgba(255, 255, 255, 0.18),
+        inset 0 0 30px rgba(255, 255, 255, 0.05);
+    transition: background 0.45s ease, color 0.45s ease, border-color 0.45s ease, transform 0.45s ease, letter-spacing 0.45s ease, box-shadow 0.45s ease;
+}
+.cta-link:hover, .cta-link:focus {
+    background: var(--white);
+    color: #000000;
+    border-color: var(--white);
+    transform: translateY(-2px);
+    letter-spacing: 0.46em;
+    -webkit-text-stroke: 0px transparent;
+    box-shadow:
+        0 0 90px rgba(255, 255, 255, 0.5),
+        inset 0 0 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    canvas#bg { display: none; }
+    body { background: radial-gradient(ellipse at center, #08101e 0%, #000 75%); }
+    html { scroll-behavior: auto; }
+    section.section { opacity: 1; transform: none; transition: none; }
+    .scroll-hint { animation: none; }
+}
