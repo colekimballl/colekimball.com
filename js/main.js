@@ -10,6 +10,13 @@ import * as THREE from 'three';
 
 const canvas = document.getElementById('bg');
 
+/* Mobile detection — used to scale quality down for weaker GPUs */
+const IS_MOBILE =
+    /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) ||
+    window.innerWidth <= 768;
+
+const MAX_PIXEL_RATIO = IS_MOBILE ? 1.5 : 2;
+
 const scene = new THREE.Scene();
 scene.fog = new THREE.FogExp2(0x000000, 0.025);
 
@@ -28,7 +35,7 @@ const renderer = new THREE.WebGLRenderer({
     alpha: false,
     powerPreference: 'high-performance'
 });
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO));
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setClearColor(0x000000, 1);
 renderer.outputColorSpace = THREE.SRGBColorSpace;
@@ -57,7 +64,7 @@ function makeRadialTexture(inner = 'rgba(255,255,255,0.9)', mid = 'rgba(255,255,
    Galaxy parameters
    ============================================================ */
 const PARAMS = {
-    count:           240000,
+    count:           IS_MOBILE ? 90000 : 240000,
     radius:          11,
     branches:        4,
     spin:            1.35,
@@ -388,7 +395,7 @@ requestAnimationFrame(() => {
 window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO));
     renderer.setSize(window.innerWidth, window.innerHeight);
     material.uniforms.uSize.value = 28.0 * renderer.getPixelRatio();
     updateScroll();
