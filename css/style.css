@@ -98,15 +98,6 @@ section.section {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1.3s ease, transform 1.3s ease;
-    contain: layout paint style;
-}
-
-/* Skip rendering of off-screen sections — major mobile scroll win */
-section.quote,
-section.manifesto,
-section.cta {
-    content-visibility: auto;
-    contain-intrinsic-size: 100vh;
 }
 
 section.section.visible {
