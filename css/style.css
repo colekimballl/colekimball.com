@@ -36,8 +36,9 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
-    scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
+    scroll-snap-type: y proximity;
+    scroll-behavior: smooth;
 }
 
 html, body {
@@ -48,13 +49,10 @@ html, body {
     text-transform: uppercase;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
 }
 
 body {
-    /* iOS momentum scroll container */
-    overscroll-behavior-y: none;
+    overflow-x: hidden;
 }
 
 canvas#bg {
@@ -98,6 +96,8 @@ section.section {
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 1.3s ease, transform 1.3s ease;
+    scroll-snap-align: start;
+    scroll-snap-stop: normal;
 }
 
 section.section.visible {
