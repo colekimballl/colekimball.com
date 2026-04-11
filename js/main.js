@@ -390,16 +390,21 @@ requestAnimationFrame(() => {
 });
 
 /* ============================================================
-   Resize
+   Resize — debounced so iOS URL-bar show/hide doesn't thrash
+   the renderer during scroll
    ============================================================ */
+let resizeTimer = 0;
 window.addEventListener('resize', () => {
-    camera.aspect = window.innerWidth / window.innerHeight;
-    camera.updateProjectionMatrix();
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO));
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    material.uniforms.uSize.value = 28.0 * renderer.getPixelRatio();
-    updateScroll();
-});
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, MAX_PIXEL_RATIO));
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        material.uniforms.uSize.value = 28.0 * renderer.getPixelRatio();
+        updateScroll();
+    }, 150);
+}, { passive: true });
 
 /* ============================================================
    Animation loop
